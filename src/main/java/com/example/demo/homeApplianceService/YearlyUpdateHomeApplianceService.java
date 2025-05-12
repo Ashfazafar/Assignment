@@ -1,5 +1,8 @@
 package com.example.demo.homeApplianceService;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class YearlyUpdateHomeApplianceService {
 
 	private HomeApplianceService homeApplinaceService;

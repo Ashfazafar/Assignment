@@ -1,7 +1,10 @@
 package com.example.demo.homeApplianceModel;
 
+import org.springframework.stereotype.Component;
+
 import com.example.demo.homeApplianceService.HomeApplliance;
 
+@Component
 public class Fan implements HomeApplliance{
 
 	private  int speed = 1; 

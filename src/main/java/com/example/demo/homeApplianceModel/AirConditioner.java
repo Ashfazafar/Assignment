@@ -1,7 +1,10 @@
 package com.example.demo.homeApplianceModel;
 
+import org.springframework.stereotype.Component;
+
 import com.example.demo.homeApplianceService.HomeApplliance;
 
+@Component
 public class AirConditioner  implements HomeApplliance{
 
 	private String mode ="OFF";
