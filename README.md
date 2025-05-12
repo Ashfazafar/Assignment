@@ -6,4 +6,5 @@ Created rest controller for home appliance control system which performs belwo o
 3) can get status of each appliances.
    http://localhost:8080/appliances/All
 5) and shutdwon.
+   http://localhost:8080/appliances/shutdown
    
