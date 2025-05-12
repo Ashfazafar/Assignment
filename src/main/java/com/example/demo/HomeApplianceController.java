@@ -33,8 +33,14 @@ public class HomeApplianceController {
 		 return homeApplianceService.getAppliances();
 	}
 
-	@PostMapping("/applianceType")
+	@PostMapping("/{applianceType}")
 	public ResponseEntity<String> turnOff(@RequestParam String applianceType){
+		
+		 if (applianceType == null || !(applianceType.equalsIgnoreCase("Light") 
+				 || applianceType.equalsIgnoreCase("Fan") 
+				 || applianceType.equalsIgnoreCase("AirConditioner"))) {
+			 return ResponseEntity.notFound().build();
+		 }
 		homeApplianceService.turnOffIndividualAppliance(applianceType);
 		return ResponseEntity.ok(applianceType + "gets turned off");
 		
