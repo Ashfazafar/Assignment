@@ -32,8 +32,8 @@ public class HomeApplianceController {
 		 return homeApplianceService.getAppliances();
 	}
 
-	@PostMapping("/{type}")
-	public ResponseEntity<String> turnOff(@PathVariable String applianceType){
+	@PostMapping("/device/{type}")
+	public ResponseEntity<String> turnOff(@PathVariable("type") String applianceType){
 		
 		 if (applianceType == null || !(applianceType.equalsIgnoreCase("Light") 
 				 || applianceType.equalsIgnoreCase("Fan") 
