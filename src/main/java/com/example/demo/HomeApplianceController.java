@@ -1,18 +1,17 @@
 package com.example.demo;
 
+import java.util.List;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.homeApplianceService.HomeApplianceService;
 import com.example.demo.homeApplianceService.HomeApplliance;
 import com.example.demo.homeApplianceService.YearlyUpdateHomeApplianceService;
-
-import java.util.List;
-
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 
 @RestController
@@ -33,8 +32,8 @@ public class HomeApplianceController {
 		 return homeApplianceService.getAppliances();
 	}
 
-	@PostMapping("/{applianceType}")
-	public ResponseEntity<String> turnOff(@RequestParam String applianceType){
+	@PostMapping("/{type}")
+	public ResponseEntity<String> turnOff(@PathVariable String applianceType){
 		
 		 if (applianceType == null || !(applianceType.equalsIgnoreCase("Light") 
 				 || applianceType.equalsIgnoreCase("Fan") 
